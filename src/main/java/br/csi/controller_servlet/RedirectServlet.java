@@ -56,7 +56,11 @@ public class RedirectServlet extends HttpServlet {
             RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/novo-produto.jsp");
             dis.forward(req, resp);
         }else if(butao.equals("atualizaPedido")) {
-            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/editar-produto.jsp");
+            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/atualizar-pedido.jsp");
+            dis.forward(req, resp);
+        }
+        else if(butao.equals("finalizarCompra")) {
+            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/finalizar-compra.jsp");
             dis.forward(req, resp);
         }
     }

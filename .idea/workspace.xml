@@ -8,8 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d3c41bce-cb50-40cb-839d-db36c4ed2b52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produto.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produtos-adm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produtos-adm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/RedirectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/RedirectServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finalizar-compra.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finalizar-compra.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pesquisa-categoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pesquisa-categoria.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador.war" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,7 +163,8 @@
       <workItem from="1572810344452" duration="28016000" />
       <workItem from="1572840762471" duration="1859000" />
       <workItem from="1572842700342" duration="78000" />
-      <workItem from="1572880904088" duration="910000" />
+      <workItem from="1572880904088" duration="1240000" />
+      <workItem from="1572892845663" duration="1657000" />
     </task>
     <servers />
   </component>

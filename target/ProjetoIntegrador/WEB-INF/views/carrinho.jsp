@@ -202,8 +202,11 @@
         <div class="container" style="margin-top: -82px">
             <div class="justify-content-center row">
                 <div class="media-container-column title col-12 col-md-10">
-                    <div class="mbr-section-btn align-right py-4"><a class="btn btn-danger display-4"
-                            href="#">CONTINUAR</a></div>
+                    <form action="redirect" method="post">
+                        <div class="mbr-section-btn align-right py-4">
+                            <button class="btn btn-danger display-4" name="butao" value="finalizarCompra">CONTINUAR</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

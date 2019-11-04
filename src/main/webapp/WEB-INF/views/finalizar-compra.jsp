@@ -189,8 +189,8 @@
                     <div class="justify-content-center row">
                         <div class="media-container-column title col-12 col-md-10">
                             <div class="mbr-section-btn align-right py-4">
-                                <a class="btn btn-secondary-outline display-4" href="#">CANCELARCOMPRA</a>
-                                <a class="btn btn-danger display-4" href="pedidos.html">FINALIZAR COMPRA</a>
+                                <button class="btn btn-secondary-outline display-4" href="#">CANCELARCOMPRA</button>
+                                <button class="btn btn-danger display-4" href="pedidos.html">FINALIZAR COMPRA</button>
                             </div>
                         </div>
                     </div>
