@@ -128,9 +128,13 @@
                             <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">R$690</p>
                         </div>
                         <!--Btn-->
-                        <div class="mbr-section-btn pt-3 align-center">
-                            <a href="#" class="btn btn-secondary-outline btn-sm display-4" style="margin-right: 10px"><span class="mbri-trash mbr-iconfont mbr-iconfont-btn"></span>REMOVER</a> 
-                            <a href="#" class="btn btn-primary btn-sm display-4"><span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>EDITAR</a>
+                        <div class="mbr-section-btn row pt-3 text-center">
+                        <form>
+                            <button href="#" class="btn btn-secondary-outline btn-sm display-4" style="margin-right: 10px"><span class="mbri-trash mbr-iconfont mbr-iconfont-btn"></span>REMOVER</button>
+                        </form>
+                        <form action="redirect" method="post">
+                            <button name="butao" value="editarProduto" class="btn btn-primary btn-sm display-4"><span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>EDITAR</button>
+                        </form>
                         </div>
                     </div>
                 </div>

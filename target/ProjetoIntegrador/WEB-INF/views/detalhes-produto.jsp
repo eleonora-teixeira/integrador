@@ -154,7 +154,7 @@
                         </div>
                         <!--Btn-->
                         <div class="mbr-section-btn pt-3 align-left">
-                            <a href="#" class="btn btn-danger-outline display-4"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>COMPRAR</a>
+                            <button href="#" class="btn btn-danger-outline display-4"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>COMPRAR</button>
                         </div>
                     </div>
                 </div>
