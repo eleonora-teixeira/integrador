@@ -1,4 +1,6 @@
+<%@ page import="br.csi.model.Produto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,137 +27,154 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 </head>
 <body>
+    <c:out value="${requestScope.usuario}" />
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
-        <nav
-            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <form action="redirect" method="post">
-                <div class="menu-logo">
-                    <div class="navbar-brand">
-                        <span class="navbar-logo">
-                            <button name="butao" value="logo-cli" style="background-color: transparent; border-color: transparent">
-                                <img src="assets/images/gamepad-1.svg" alt="Mobirise" title="" style="height: 3.8rem;">
-                            </button>
-                        </span>
-                        <span class="navbar-caption-wrap">
-                            <button name="butao" value="logo-cli" class="navbar-caption text-white display-4" style="background-color: transparent; border-color: transparent">GAMESTATION</button>
-                        </span>
+            <nav
+                class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                </div>
-            </form>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.com"
-                            data-toggle="dropdown-submenu" aria-expanded="false">PLAYSTATION</a>
-                        <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">PLAYSTATION
-                                3</a>
-                            <a class="text-white dropdown-item display-4" href="pesquisa-categoria.html"
-                                aria-expanded="false">PLAYSTATION 4</a>
+                </button>
+                <form action="redirect" method="post">
+                    <div class="menu-logo">
+                        <div class="navbar-brand">
+                            <span class="navbar-logo">
+                                <button name="butao" value="logo-cli" style="background-color: transparent; border-color: transparent">
+                                    <img src="assets/images/gamepad-1.svg" alt="" title="" style="height: 3.8rem;">
+                                </button>
+                            </span>
+                            <span class="navbar-caption-wrap">
+                                <button name="butao" value="logo-cli" class="navbar-caption text-white display-4" style="background-color: transparent; border-color: transparent">GAMESTATION</button>
+                            </span>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="#"
-                            data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
-                        <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">XBOX 360</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">XBOX ONE</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="#"
-                            data-toggle="dropdown-submenu" aria-expanded="false">NINTENDO</a>
-                        <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">NINTENDO WII</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO WII
-                                U</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO
-                                SWITCH</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="carrinho.html" aria-expanded="false">
-                            <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown open">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="true"
-                            data-toggle="dropdown-submenu">
-                            <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>${usuario.getNome()}
-                        </a>
-                        <div class="dropdown-menu">
-                            <form action="perfil" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="vaiperfil" aria-expanded="true">MINHA CONTA</button>
-                            </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
-                            </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="pedido" aria-expanded="true">MEUS PEDIDOS</button>
-                            </form>
-                            <form action="login" method="post">
-                                <button class="text-white dropdown-item display-4" type="submit" name="butao" value="sair" aria-expanded="true">SAIR</button>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <!--PESQUISA-->
-    <section class="mbr-section form3 cid-rFWC7sDgMh" id="form3-1u">
-        <div class="container">
-            <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
-                        <div class="dragArea row">
-                            <div class="form-group col" data-for="pesquisa">
-                                <input type="email" name="pesquisa" data-form-field="Pesquisa" class="form-control display-7" placeholder="O que você está procurando?">
+                    </div>
+                </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.com"
+                                data-toggle="dropdown-submenu" aria-expanded="false">PLAYSTATION</a>
+                            <div class="dropdown-menu">
+                                <form action="categoria" method="post" >
+                                    <input type="hidden" name="modelo" value="Playstation 3">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 3</button>
+                                </form>
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Playstation 4">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 4</button>
+                                </form>
                             </div>
-                            <div class="col-auto input-group-btn">
-                                <button type="submit" class="btn  btn-primary display-4">PESQUISAR</button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-white dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
+                            <div class="dropdown-menu">
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Xbox 360">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" >XBOX 360</button>
+                                </form>
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Xbox One">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">XBOX ONE</button>
+                                </form>
+
                             </div>
-                        </div>
-                    </form>
-                    <!---Formbuilder Form--->
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-white dropdown-toggle display-4" href="#"
+                                data-toggle="dropdown-submenu" aria-expanded="false">NINTENDO</a>
+                            <div class="dropdown-menu">
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Wii">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria">NINTENDO WII</button>
+                                </form>
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Wii U">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO WII U</button>
+                                </form>
+                                <form action="categoria" method="post">
+                                    <input type="hidden" name="modelo" value="Switch">
+                                    <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO SWITCH</button>
+                                </form>
+
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <form action="cart" method="post">
+                                <button class="nav-link link text-white display-4" name="acao" value="vaiCarrinho" aria-expanded="false" style="background-color: transparent; border-color: transparent">
+                                    <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                    <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
+                                </button>
+                            </form>
+                            <%--<form action="redirect" method="post">
+                                <input type="hidden" name="butao" value="carrinho">
+                                <a class="nav-link link text-white display-4" aria-expanded="false">
+                                    <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
+                                </a>
+                            </form>--%>
+                        </li>
+
+                        <li class="nav-item dropdown open">
+                            <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="true"
+                                data-toggle="dropdown-submenu">
+                                <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>${usuario.getNome()}
+                            </a>
+                            <div class="dropdown-menu">
+                                <form action="perfil" method="post">
+                                    <button type="submit" class="text-white dropdown-item display-4" name="butao" value="vaiperfil" aria-expanded="true">MINHA CONTA</button>
+                                </form>
+                                <form action="cadastroEndereco" method="post">
+                                    <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                    <button type="submit" class="text-white dropdown-item display-4" name="acao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
+                                </form>
+                                <form action="compras" method="post">
+                                    <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                    <button type="submit" class="text-white dropdown-item display-4" name="acao" value="vaiPedido" aria-expanded="true">MEUS PEDIDOS</button>
+                                </form>
+                                <form action="login" method="post">
+                                    <button class="text-white dropdown-item display-4" type="submit" name="butao" value="sair" aria-expanded="true">SAIR</button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
+            </nav>
+        </section>
+
     <!--DETALHES-->
     <section class="services2 cid-rFWCs2ee94" id="services2-1z">
         <div class="container">
+        <br><br><br><br><br><br>
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure" style="width: 50%;">
-                        <img src="assets/images/red-dead-redemption-2-952x1186.jpg" alt="Mobirise" title="">
+                        <img src="assets/images/NO_IMG.png" alt="Mobirise" title="">
                     </div>
                     <div class="align-left aside-content">
-                        <h2 class="mbr-title pt-2 mbr-fonts-style display-2">RED DEAD REDEMPTION 2</h2>
+                        <h4 class="mbr-title pt-2 mbr-fonts-style display-2">${produto.nome}</h4>
                         <div class="mbr-section-text">
                             <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolores
-                                doloribus
-                                eligendi eum illo
+                                ${produto.descricao}
+                            </p><br>
+                            <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-7">
+                                ${produto.conservacao}
                             </p>
-                            <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">R$ XXX,X</p>
+                            <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">R$${produto.valor}</p>
                         </div>
                         <!--Btn-->
-                        <div class="mbr-section-btn pt-3 align-left">
-                            <button href="#" class="btn btn-danger-outline display-4"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>COMPRAR</button>
-                        </div>
+                        <form action="cart" method="post">
+                            <div class="mbr-section-btn pt-3 align-left">
+                                 <input type="hidden" name="codigo" value="${produto.codigo}">
+                                 <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                 <button name="acao" value="carrinho" class="btn btn-danger-outline display-4"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>COMPRAR</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

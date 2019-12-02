@@ -9,7 +9,7 @@ public class Usuario_DAO {
     public boolean create(Usuario usuario)
     {
         try(Connection conn = new ConectaDB_Postgres().getConexao()){
-            String sql = "INSERT INTO usuario(nome,email,senha,permissao)"+"VALUES (?,?,?,?)";
+            String sql = "INSERT INTO usuario(nome,email,senha,permissao) VALUES (?,?,?,?)";
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.setString(1, usuario.getNome());
             pre.setString(2, usuario.getEmail());

@@ -149,7 +149,7 @@
                         <input type="hidden" name="email" data-form-email="true">
                         <div class="dragArea row">
                             <div class="col-md-8  form-group" data-for="email">
-                                <label for="email-form1-1n"
+                                <label
                                        class="form-control-label mbr-fonts-style display-7">PEDIDO</label>
                                 <input type="text" name="cep" data-form-field="cep" required="required"
                                        class="form-control display-7">

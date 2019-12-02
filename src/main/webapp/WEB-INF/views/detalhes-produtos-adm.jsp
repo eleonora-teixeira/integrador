@@ -1,4 +1,6 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page import="br.csi.model.Produto" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +28,7 @@
 </head>
 
 <body>
+
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
         <nav
@@ -98,7 +101,7 @@
                     <div class="container">
                             <div class="row justify-content-center">
                                 <div class="title col-12 col-lg-8">
-                                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">PRODUTO: 5242345</h2>
+                                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">PRODUTO: ${produto.codigo}</h2>
                                 </div>
                             </div>
                         </div>
@@ -115,26 +118,50 @@
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure" style="width: 50%;">
-                        <img src="assets/images/red-dead-redemption-2-952x1186.jpg" alt="Mobirise" title="">
+                        <img src="assets/images/NO_IMG.png" alt="Mobirise" title="">
                     </div>
                     <div class="align-left aside-content">
-                        <h4 class="mbr-title pt-2 mbr-fonts-style display-2">Red Dead Redemption II</h4>
+                        <h4 class="mbr-title pt-2 mbr-fonts-style display-2">${produto.nome}</h4>
                         <div class="mbr-section-text">
                             <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolores
-                                doloribus
-                                eligendi eum illo
+                                ${produto.descricao}
+                            </p><br>
+                            <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-7">
+                                ${produto.conservacao}
                             </p>
-                            <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">R$690</p>
+                            <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">R$${produto.valor}</p>
                         </div>
                         <!--Btn-->
-                        <div class="mbr-section-btn row pt-3 text-center">
-                        <form>
-                            <button href="#" class="btn btn-secondary-outline btn-sm display-4" style="margin-right: 10px"><span class="mbri-trash mbr-iconfont mbr-iconfont-btn"></span>REMOVER</button>
-                        </form>
-                        <form action="redirect" method="post">
-                            <button name="butao" value="editarProduto" class="btn btn-primary btn-sm display-4"><span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>EDITAR</button>
-                        </form>
+                        <div class="row">
+                        <div class="mbr-section-btn" style="margin-left: 11.75rem">
+                                <form action="cadastroProduto" method="post">
+                                    <div class="mbr-section-btn text-right">
+                                        <input type="hidden" name="codigo" value="${produto.codigo}">
+                                        <button name="acao" value="deleteProd" class="btn btn-secondary-outline btn-sm display-4">
+                                            <span class="mbri-trash mbr-iconfont mbr-iconfont-btn"></span>REMOVER
+                                        </button>
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="mbr-section-btn" style="margin-left: 0.75rem; margin-top: -6px">
+                                <form action="cadastroProduto" method="post">
+                                        <button name="acao" value="vaiEditProd" class="btn btn-primary btn-sm display-4">
+                                            <input type="hidden" name="codigo" value="${produto.codigo}">
+                                            <input type="hidden" name="status" value="${produto.status}">
+                                            <input type="hidden" name="nome" value="${produto.nome}">
+                                            <input type="hidden" name="valor" value="${produto.valor}">
+                                            <input type="hidden" name="descricao" value="${produto.descricao}">
+                                            <input type="hidden" name="modelo" value="${produto.modelo}">
+                                            <input type="hidden" name="tipo" value="${produto.tipo}">
+                                            <input type="hidden" name="conservacao" value="${produto.conservacao}">
+                                            <input type="hidden" name="marca" value="${produto.marca}">
+                                            <span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>EDITAR
+                                        </button>
+                                </form>
+                        </div>
+                        </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -31,6 +31,9 @@
 
     <c:out value="${requestScope.usuario}" />
 
+    <jsp:useBean id="produtos" class="br.csi.dao.ProdutoDAO" />
+    <c:set var="produtos" value="${produtos.getProdutos()}" />
+
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
         <nav
@@ -50,7 +53,7 @@
                     <div class="navbar-brand">
                         <span class="navbar-logo">
                             <button name="butao" value="logo-cli" style="background-color: transparent; border-color: transparent">
-                                <img src="assets/images/gamepad-1.svg" alt="Mobirise" title="" style="height: 3.8rem;">
+                                <img src="assets/images/gamepad-1.svg" alt="" title="" style="height: 3.8rem;">
                             </button>
                         </span>
                         <span class="navbar-caption-wrap">
@@ -65,33 +68,53 @@
                         <a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.com"
                             data-toggle="dropdown-submenu" aria-expanded="false">PLAYSTATION</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">PLAYSTATION
-                                3</a>
-                            <form action="redirect" method="post">
-                                <button class="text-white dropdown-item display-4" name="butao" value="pesquisa" aria-expanded="false">PLAYSTATION 4</button>
+                            <form action="categoria" method="post" >
+                                <input type="hidden" name="modelo" value="Playstation 3">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 3</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Playstation 4">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 4</button>
                             </form>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="#"
-                            data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
+                        <a class="nav-link link text-white dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">XBOX 360</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">XBOX ONE</a>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Xbox 360">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" >XBOX 360</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Xbox One">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">XBOX ONE</button>
+                            </form>
+
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link link text-white dropdown-toggle display-4" href="#"
                             data-toggle="dropdown-submenu" aria-expanded="false">NINTENDO</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">NINTENDO WII</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO WII</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO SWITCH</a>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Wii">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria">NINTENDO WII</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Wii U">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO WII U</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Switch">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO SWITCH</button>
+                            </form>
+
                         </div>
                     </li>
                     <li class="nav-item">
-                        <form action="redirect" method="post">
-                            <button class="nav-link link text-white display-4" name="butao" value="carrinho" aria-expanded="false" style="background-color: transparent; border-color: transparent">
+                        <form action="cart" method="post">
+                            <button class="nav-link link text-white display-4" name="acao" value="vaiCarrinho" aria-expanded="false" style="background-color: transparent; border-color: transparent">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
                                 <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
                             </button>
                         </form>
@@ -107,18 +130,18 @@
                         <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="true"
                             data-toggle="dropdown-submenu">
                             <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>${usuario.getNome()}
-
-
                         </a>
                         <div class="dropdown-menu">
                             <form action="perfil" method="post">
                                 <button type="submit" class="text-white dropdown-item display-4" name="butao" value="vaiperfil" aria-expanded="true">MINHA CONTA</button>
                             </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
+                            <form action="cadastroEndereco" method="post">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                <button type="submit" class="text-white dropdown-item display-4" name="acao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
                             </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="pedido" aria-expanded="true">MEUS PEDIDOS</button>
+                            <form action="compras" method="post">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                <button type="submit" class="text-white dropdown-item display-4" name="acao" value="vaiPedido" aria-expanded="true">MEUS PEDIDOS</button>
                             </form>
                             <form action="login" method="post">
                                 <button class="text-white dropdown-item display-4" type="submit" name="butao" value="sair" aria-expanded="true">SAIR</button>
@@ -129,34 +152,14 @@
             </div>
         </nav>
     </section>
-    
-    <!--PESQUISA-->
-    <section class="mbr-section form3 cid-rFWrky3Q2k" id="form3-12">
-        <div class="container">
-            <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
-                        <div class="dragArea row">
-                            <div class="form-group col" data-for="email">
-                                <input type="email" name="email" data-form-field="Email" class="form-control display-7" placeholder="O que você está procurando?">
-                            </div>
-                                <div class="col-auto input-group-btn"><button type="submit"class="btn  btn-primary display-4">PESQUISAR</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!---Formbuilder Form--->
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!--PRODUTOS-->
     <section class="header1 cid-rFWMTLGsvO" id="header16-24">
         <div class="container">
+        <br><br><br><br><br><br>
             <div class="row justify-content-md-center">
                 <div class="col-md-10 align-center">
-                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-5">Produtos em destaque</h1>
+                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-5">Últimos Produtos</h1>
                     <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-7">Estoque limitado!</h3>
                 </div>
             </div>
@@ -171,151 +174,50 @@
         <!--Container-->
         <div class="container">
             <div class="row justify-content-center">
-                <!--Titles-->
-                <div class="title pb-5 col-12">
-                </div>
-                <!--Card-1-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <a href="#"><img src="assets/images/shadow-tomb-raider-696x867.png" alt="Mobirise" title=""></a>
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn text-center">
-                                <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
+
+                <c:forEach var="produtos" items="${produtos}">
+                    <div class="card col-12 col-md-6 p-3 col-lg-4">
+                        <div class="card-wrapper">
+                            <div class="card-img">
+                                <a href="#"><img src="assets/images/NO_IMG.png" alt="Mobirise"
+                                                 title=""></a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-2-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/red-dead-redemption-3-696x867.jpg" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn row text-center">
-                                <form>
-                                    <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                </form>
-                                <form action="redirect" method="post">
-                                    <button name="butao" value="detalhes" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-3-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4 last-child">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/wild-hunt-696x867.png" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                             <!--Btn-->
-                             <div class="mbr-section-btn text-center">
-                                <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="services1 cid-rFWMS6yLAz" id="services1-23">
-        <!---->
-
-        <!---->
-        <!--Overlay-->
-
-        <!--Container-->
-        <div class="container">
-            <div class="row justify-content-center">
-                <!--Titles-->
-                <div class="title pb-5 col-12">
-
-
-                </div>
-                <!--Card-1-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <a href="page9.html"><img
-                                    src="assets/images/the-last-of-us-091-0d51b0f004cf900b3215123634769951-1024-1024-696x815.jpg"
-                                    alt="Mobirise" title=""></a>
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-
-                            <!--Btn-->
-                            <div class="mbr-section-btn text-center">
-                                    <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                    <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
+                            <div class="card-box">
+                                <h4 class="card-title mbr-fonts-style display-5 text-center">${produtos.nome} </h4>
+                                <!--Btn-->
+                                <div class="row text-center" style="margin-left: 25px">
+                                    <form action="cart" method="post">
+                                        <div class="mbr-section-btn align-center">
+                                            <input type="hidden" name="codigo" value="${produtos.codigo}">
+                                            <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                            <button name="acao" value="carrinho" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ ${produtos.valor}</button>
+                                        </div>
+                                    </form>
+                                    <form action="cadastroProduto" method="post">
+                                        <div class="mbr-section-btn align-center">
+                                            <%--<button name="acao" value="detalhesAdm?id=${produtos.codigo}" class="btn btn-primary btn-sm display-4">DETALHES</button>--%>
+                                            <input type="hidden" name="codigo" value="${produtos.codigo}">
+                                            <button name="acao" value="detalhesProd" class="btn btn-primary btn-sm display-4">DETALHES</button>
+                                        </div>
+                                    </form>
                                 </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-2-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/assassyns-syndicate-696x813.png" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn text-center">
-                                <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--Card-3-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4 last-child">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/81s8s6ifkil.-sl1500-696x813.jpg" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn text-center">
-                                <button href="#" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ XXX</button>
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
+
             </div>
         </div>
     </section>
+
+
 
     <section once="footers" class="cid-rFWniiZVWU" id="footer7-q">
-
-
-
-
-
         <div class="container">
             <div class="media-container-row align-center mbr-white">
 
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
-
-
-
-
-
-
                         <div class="soc-item">
                             <a href="https://twitter.com/mobirise" target="_blank">
                                 <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>

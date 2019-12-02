@@ -22,7 +22,7 @@ public class RedirectServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Usuario u = (Usuario) session.getAttribute("usuario");
 
-        if(butao.equals("detalhes")){
+        if(butao.equals("detalhe")){
             RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/detalhes-produto.jsp");
             dis.forward(req, resp);
         }else if(butao.equals("detalhes-adm")){
@@ -41,6 +41,7 @@ public class RedirectServlet extends HttpServlet {
             RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/index-cliente.jsp");
             dis.forward(req, resp);
         }else if(butao.equals("logo-adm")) {
+
             RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/index-adm.jsp");
             dis.forward(req, resp);
         }else if(butao.equals("logo")) {
@@ -57,10 +58,6 @@ public class RedirectServlet extends HttpServlet {
             dis.forward(req, resp);
         }else if(butao.equals("atualizaPedido")) {
             RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/atualizar-pedido.jsp");
-            dis.forward(req, resp);
-        }
-        else if(butao.equals("finalizarCompra")) {
-            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/finalizar-compra.jsp");
             dis.forward(req, resp);
         }
     }

@@ -97,7 +97,7 @@
                     <div class="container">
                             <div class="row justify-content-center">
                                 <div class="title col-12 col-lg-8">
-                                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">EDITANDO PRODUTO 65435453</h2>
+                                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">EDITANDO PRODUTO ${produto.codigo}</h2>
                                 </div>
                             </div>
                         </div>
@@ -108,59 +108,60 @@
 <!--FORMULÁRIO-->
 <section class="mbr-section form1 cid-rFWAIbBLn0" id="form1-1n">
         <div class="container">
+            <form action="cadastroProduto" method="post" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
+                <input type="hidden" name="codigo"  value="${produto.codigo}" >
+                <div class="dragArea row">
+                    <div class="col-md-12  form-group" data-for="destinatario">
+                        <label  class="form-control-label mbr-fonts-style display-7">NOME</label>
+                        <input type="text" name="nome" data-form-field="nome" value="${produto.nome}" required="required" class="form-control display-7" >
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div class="col-md-4  form-group" data-for="email">
+                        <label  class="form-control-label mbr-fonts-style display-7">VALOR</label>
+                        <input type="text" name="valor" data-form-field="cep" value="${produto.valor}" required="required" class="form-control display-7" >
+                    </div>
+                    <div data-for="logradouro" class="col-md-8 form-group">
+                        <label  class="form-control-label mbr-fonts-style display-7">MARCA</label>
+                        <input type="text" name="marca" data-form-field="marca" value="${produto.marca}" required="required" class="form-control display-7">
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div data-for="numero" class="col-md-6  form-group">
+                        <label  class="form-control-label mbr-fonts-style display-7">MODELO</label>
+                        <input type="text" name="modelo" data-form-field="numero"  value="${produto.modelo}" required="required" class="form-control display-7">
+                    </div>
+                    <div data-for="complemento" class="col-md-6  form-group">
+                        <label  class="form-control-label mbr-fonts-style display-7">TIPO</label>
+                        <input type="text" name="tipo" data-form-field="tipo" value="${produto.tipo}" required="required" class="form-control display-7">
+                    </div>
+
+                </div>
+                <div class="dragArea row">
+                    <div data-for="bairro" class="col-md-12  form-group">
+                        <label class="form-control-label mbr-fonts-style display-7">DESCRIÇÃO</label>
+                        <input type="text" name="descricao" data-form-field="descricao"  value="${produto.descricao}" required="required" class="form-control display-7">
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div data-for="cidade" class="col-md-8  form-group">
+                        <label  class="form-control-label mbr-fonts-style display-7">CONSERVAÇÃO</label>
+                        <input type="text" name="conservacao" data-form-field="conservacao" value="${produto.conservacao}" class="form-control display-7">
+                    </div>
+                    <div data-for="estado" class="col-md-4  form-group">
+                        <label  class="form-control-label mbr-fonts-style display-7">STATUS</label>
+                        <input type="text" name="status" data-form-field="status" value="${produto.status}" required="required" class="form-control display-7">
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div class="col-md-12 input-group-btn align-center">
+                        <button type="submit" class="btn btn-form btn-primary display-4" name="acao" value="editProd">Salvar Alterações</button>
+                    </div>
+                </div>
+            </form>
             <div class="row justify-content-center">
                 <div class="media-container-column col-lg-8" data-form-type="formoid">
                     <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true">
-                        <div class="dragArea row">
-                            <div class="col-md-12  form-group" data-for="destinatario">
-                                <label for="name-form1-1n" class="form-control-label mbr-fonts-style display-7">NOME</label>
-                                <input type="text" name="name" data-form-field="Name" required="required" class="form-control display-7" >
-                            </div>                            
-                        </div>
-                        <div class="dragArea row"> 
-                            <div class="col-md-4  form-group" data-for="email">
-                                <label for="email-form1-1n" class="form-control-label mbr-fonts-style display-7">VALOR</label>
-                                <input type="text" name="cep" data-form-field="cep" required="required" class="form-control display-7" >
-                            </div> 
-                            <div data-for="logradouro" class="col-md-8 form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">MARCA</label>
-                                <input type="text" name="logradouro" data-form-field="logradouro" required="required" class="form-control display-7">
-                            </div>                            
-                        </div>
-                        <div class="dragArea row">
-                            <div data-for="numero" class="col-md-6  form-group"> 
-                                    <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">MODELO</label>
-                                    <input type="text" name="numero" data-form-field="numero" required="required" class="form-control display-7">
-                            </div>
-                            <div data-for="complemento" class="col-md-6  form-group"> 
-                                    <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">TIPO</label>
-                                    <input type="text" name="complemento" data-form-field="complemento" required="required" class="form-control display-7">
-                            </div>
-                            
-                        </div>    
-                        <div class="dragArea row">                            
-                            <div data-for="bairro" class="col-md-12  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">DESCRIÇÃO</label>
-                                <input type="text" name="bairro" data-form-field="bairro" required="required" class="form-control display-7">
-                            </div>                            
-                        </div>    
-                        <div class="dragArea row">
-                            <div data-for="cidade" class="col-md-8  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">CONSERVAÇÃO</label>
-                                <input type="text" name="cidade" data-form-field="cidade" required="required" class="form-control display-7">
-                            </div>
-                            <div data-for="estado" class="col-md-4  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">STATUS</label>
-                                <input type="text" name="estado" data-form-field="estado" required="required" class="form-control display-7">
-                            </div>        
-                        </div>
-                        <div class="dragArea row">
-                            <div class="col-md-12 input-group-btn align-center">
-                                <button type="submit" class="btn btn-form btn-danger display-4">SALVAR ALTERAÇÕES</button>
-                            </div>
-                        </div>
-                    </form>
                     <!---Formbuilder Form--->
                 </div>
             </div>

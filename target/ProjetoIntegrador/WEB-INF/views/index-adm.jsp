@@ -1,3 +1,4 @@
+<%@ page import="br.csi.model.Produto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -27,6 +28,10 @@
 
 <body>
 <c:out value="${requestScope.usuario}" />
+
+<jsp:useBean id="produtos" class="br.csi.dao.ProdutoDAO" />
+<c:set var="produtos" value="${produtos.getProdutos()}" />
+
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
         <nav
@@ -92,35 +97,12 @@
         </nav>
     </section>
 
-    <!--PESQUISAR PRODDUTO-->
-    <section class="mbr-section form3 cid-rFWrky3Q2k" id="form3-12">
-        <div class="container">
-            <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <!---Formbuilder Form--->
-                    <form action="https://mobirise.com/" method="POST" class="mbr-form form-with-styler"
-                        data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true">
-                        <div class="dragArea row">
-                            <div class="form-group col" data-for="email">
-                                <input type="email" name="email" data-form-field="Email" class="form-control display-7"
-                                    placeholder="Digite o código do produto!">
-                            </div>
-                            <div class="col-auto input-group-btn">
-                                <button type="submit" class="btn  btn-primary display-4">BUSCAR</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!---Formbuilder Form--->
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="header1 cid-rFWMTLGsvO" id="header16-24">
         <div class="container">
+        <br><br><br><br><br><br>
             <div class="row justify-content-md-center">
                 <div class="col-md-10 align-center">
-                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-5">Produtos em destaque</h1>
+                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-5">Produtos</h1>
                 </div>
             </div>
         </div>
@@ -134,116 +116,33 @@
         <!--Container-->
         <div class="container">
             <div class="row justify-content-center">
-                <!--Card-1-->
+
+                <c:forEach var="produtos" items="${produtos}">
                 <div class="card col-12 col-md-6 p-3 col-lg-4">
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <a href="#"><img src="assets/images/shadow-tomb-raider-696x867.png" alt="Mobirise"
+                            <a href="#"><img src="assets/images/NO_IMG.png" alt="Mobirise"
                                     title=""></a>
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
+                            <h4 class="card-title mbr-fonts-style display-5 text-center">${produtos.nome} </h4>
                             <!--Btn-->
-                            <div class="mbr-section-btn align-center">
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-2-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/red-dead-redemption-3-696x867.jpg" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <form action="redirect" method="post">
+                            <form action="cadastroProduto" method="post">
                                 <div class="mbr-section-btn align-center">
-                                    <button name="butao" value="detalhes-adm" class="btn btn-primary btn-sm display-4">DETALHES</button>
+                                    <%--button name="acao" value="detalhesAdm?id=${produtos.codigo}" class="btn btn-primary btn-sm display-4">DETALHES</button>--%>
+                                    <input type="hidden" name="codigo" value="${produtos.codigo}">
+                                    <button name="acao" value="detalhesAdm" class="btn btn-primary btn-sm display-4">DETALHES</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!--Card-3-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4 last-child">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/wild-hunt-696x867.png" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn align-center">
-                                <button class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
     </section>
 
-    <section class="services1 cid-rFWMS6yLAz" id="services1-23">
-        <!---->
 
-        <!---->
-        <!--Overlay-->
-
-        <!--Container-->
-        <div class="container">
-            <div class="row justify-content-center">
-                <!--Card-1-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <a href="#"><img
-                                    src="assets/images/the-last-of-us-091-0d51b0f004cf900b3215123634769951-1024-1024-696x815.jpg"
-                                    alt="Mobirise" title=""></a>
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn align-center">
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-2-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/assassyns-syndicate-696x813.png" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="mbr-section-btn align-center">
-                                <button href="#" class="btn btn-primary btn-sm display-4">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-3-->
-                <div class="card col-12 col-md-6 p-3 col-lg-4 last-child">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="assets/images/81s8s6ifkil.-sl1500-696x813.jpg" alt="Mobirise" title="">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-5 text-center">Nome produto</h4>
-                            <!--Btn-->
-                            <div class="#" class="btn btn-primary btn-sm display-4">DETALHES</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section once="footers" class="cid-rFWniiZVWU" id="footer7-q">
          <div class="container">
             <div class="media-container-row align-center mbr-white">

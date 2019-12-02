@@ -60,7 +60,6 @@ public class UsuarioServlet extends HttpServlet {
             if(u.getPermissao() == 1) {
 
                 session.setAttribute("usuario", u);
-                System.out.println("Ta no Vai perfil");
                 RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/perfil.jsp");
                 dis.forward(req, resp);
             }

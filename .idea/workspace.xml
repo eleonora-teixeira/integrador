@@ -7,12 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3c41bce-cb50-40cb-839d-db36c4ed2b52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/csi/model/Produto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pesquisa-categoria-out.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/RedirectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/RedirectServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/csi/controller_servlet/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/csi/dao/Usuario_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/csi/dao/Usuario_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/alterar-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/atualizar-pedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/atualizar-pedido.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produtos-adm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detalhes-produtos-adm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editar-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editar-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editar-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/endereco.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/endereco.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finalizar-compra.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finalizar-compra.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-adm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-adm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-cliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-cliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/novo-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/novo-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/novo-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pedidos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pedidos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/perfil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/perfil.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pesquisa-categoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pesquisa-categoria.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/controller_servlet/RedirectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/controller_servlet/RedirectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/controller_servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/controller_servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/dao/Usuario_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/classes/br/csi/dao/Usuario_DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/alterar-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/atualizar-pedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/atualizar-pedido.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/detalhes-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/detalhes-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/detalhes-produtos-adm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/detalhes-produtos-adm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/editar-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/editar-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/editar-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/endereco.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/endereco.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/finalizar-compra.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/finalizar-compra.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/index-adm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/index-adm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/index-cliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/index-cliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/novo-endereço.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/novo-produto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/novo-produto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/pedidos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/pedidos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/perfil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/perfil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/pesquisa-categoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/views/pesquisa-categoria.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjetoIntegrador/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ProjetoIntegrador/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/csi/controller_servlet/RedirectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/csi/controller_servlet/RedirectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/csi/controller_servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/csi/controller_servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/csi/dao/Usuario_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/csi/dao/Usuario_DAO.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +63,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="GameStation_DB@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,22 +110,48 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="22" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
   <component name="ProjectId" id="1T8TWqzN88UyP3FLo8QwxzgZCfi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="br.csi.controller_servlet" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Downloads\projectfromhell\src\main\webapp\WEB-INF\views" />
+      <recent name="E:\Downloads\projectfromhell\src\main\webapp" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main\webapp" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main\webapp\WEB-INF" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.csi.controller_servlet" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Downloads\projectfromhell\src\main\webapp" />
+      <recent name="E:\Downloads\projectfromhell\src\main\webapp\WEB-INF" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main\webapp" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main\webapp\WEB-INF" />
       <recent name="E:\Downloads\ProjetoIntegrador\src\main\java\br\csi" />
@@ -75,6 +171,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8082/ProjetoIntegrador_war/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -86,7 +183,8 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_ProjetoIntegrador" />
-        <option name="HTTP_PORT" value="8081" />
+        <option name="HTTP_PORT" value="8082" />
+        <option name="JNDI_PORT" value="1098" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -149,6 +247,16 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -162,9 +270,20 @@
       <workItem from="1572810113792" duration="199000" />
       <workItem from="1572810344452" duration="28016000" />
       <workItem from="1572840762471" duration="1859000" />
-      <workItem from="1572842700342" duration="78000" />
-      <workItem from="1572880904088" duration="1240000" />
-      <workItem from="1572892845663" duration="1657000" />
+      <workItem from="1572842689569" duration="9000" />
+      <workItem from="1572973359020" duration="1372000" />
+      <workItem from="1573498755062" duration="2261000" />
+      <workItem from="1574206602286" duration="9699000" />
+      <workItem from="1574287782498" duration="14804000" />
+      <workItem from="1574372801515" duration="9403000" />
+      <workItem from="1574891641037" duration="10643000" />
+      <workItem from="1574903321610" duration="5812000" />
+      <workItem from="1575164066176" duration="9542000" />
+      <workItem from="1575218796346" duration="3533000" />
+      <workItem from="1575230168084" duration="2109000" />
+      <workItem from="1575232795013" duration="22955000" />
+      <workItem from="1575259470661" duration="413000" />
+      <workItem from="1575292237403" duration="4418000" />
     </task>
     <servers />
   </component>
@@ -179,6 +298,20 @@
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>

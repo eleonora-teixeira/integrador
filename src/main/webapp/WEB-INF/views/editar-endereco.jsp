@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="br.csi.model.Usuario" %>
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +51,7 @@
                     <div class="navbar-brand">
                         <span class="navbar-logo">
                             <button name="butao" value="logo-cli" style="background-color: transparent; border-color: transparent">
-                                <img src="assets/images/gamepad-1.svg" alt="Mobirise" title="" style="height: 3.8rem;">
+                                <img src="assets/images/gamepad-1.svg" alt="" title="" style="height: 3.8rem;">
                             </button>
                         </span>
                         <span class="navbar-caption-wrap">
@@ -64,36 +66,64 @@
                         <a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.com"
                             data-toggle="dropdown-submenu" aria-expanded="false">PLAYSTATION</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">PLAYSTATION
-                                3</a>
-                            <a class="text-white dropdown-item display-4" href="pesquisa-categoria.html"
-                                aria-expanded="false">PLAYSTATION 4</a>
+                            <form action="categoria" method="post" >
+                                <input type="hidden" name="modelo" value="Playstation 3">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 3</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Playstation 4">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">PLAYSTATION 4</button>
+                            </form>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link text-white dropdown-toggle display-4" href="#"
-                            data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
+                        <a class="nav-link link text-white dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">XBOX</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">XBOX 360</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">XBOX ONE</a>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Xbox 360">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" >XBOX 360</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Xbox One">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">XBOX ONE</button>
+                            </form>
+
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link link text-white dropdown-toggle display-4" href="#"
                             data-toggle="dropdown-submenu" aria-expanded="false">NINTENDO</a>
                         <div class="dropdown-menu">
-                            <a class="text-white dropdown-item display-4" href="#">NINTENDO WII</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO WII
-                                U</a>
-                            <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">NINTENDO
-                                SWITCH</a>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Wii">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria">NINTENDO WII</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Wii U">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO WII U</button>
+                            </form>
+                            <form action="categoria" method="post">
+                                <input type="hidden" name="modelo" value="Switch">
+                                <button class="text-white dropdown-item display-4" name="acao" value="vaicategoria" aria-expanded="false">NINTENDO SWITCH</button>
+                            </form>
+
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="carrinho.html" aria-expanded="false">
-                            <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
-                        </a>
+                        <form action="cart" method="post">
+                            <button class="nav-link link text-white display-4" name="acao" value="vaiCarrinho" aria-expanded="false" style="background-color: transparent; border-color: transparent">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
+                            </button>
+                        </form>
+                        <%--<form action="redirect" method="post">
+                            <input type="hidden" name="butao" value="carrinho">
+                            <a class="nav-link link text-white display-4" aria-expanded="false">
+                                <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
+                            </a>
+                        </form>--%>
                     </li>
+
                     <li class="nav-item dropdown open">
                         <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="true"
                             data-toggle="dropdown-submenu">
@@ -103,11 +133,13 @@
                             <form action="perfil" method="post">
                                 <button type="submit" class="text-white dropdown-item display-4" name="butao" value="vaiperfil" aria-expanded="true">MINHA CONTA</button>
                             </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
+                            <form action="cadastroEndereco" method="post">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                <button type="submit" class="text-white dropdown-item display-4" name="acao" value="endereco" aria-expanded="true">MEUS ENDEREÇOS</button>
                             </form>
-                            <form action="redirect" method="post">
-                                <button type="submit" class="text-white dropdown-item display-4" name="butao" value="pedido" aria-expanded="true">MEUS PEDIDOS</button>
+                            <form action="compras" method="post">
+                                <input type="hidden" name="id_usu" value="${usuario.getId()}">
+                                <button type="submit" class="text-white dropdown-item display-4" name="acao" value="vaiPedido" aria-expanded="true">MEUS PEDIDOS</button>
                             </form>
                             <form action="login" method="post">
                                 <button class="text-white dropdown-item display-4" type="submit" name="butao" value="sair" aria-expanded="true">SAIR</button>
@@ -119,6 +151,7 @@
         </nav>
     </section>
     <!--FORMULÁRIO-->
+    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
     <section class="mbr-section form1 cid-rFWAIbBLn0" id="form1-1n">
         <div class="container">
             <div class="row justify-content-center">
@@ -131,69 +164,73 @@
             <div class="row justify-content-center">
                 <div class="media-container-column col-lg-8" data-form-type="formoid">
                     <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true">
+
+                        <input type="hidden" name="id_usu" value="${usuario.getId()}" data-form-email="true">
+                        <input type="hidden" name="id_end" value="${endereco.getId_end()}" data-form-email="true">
+                        <input type="hidden" name="email" data-form-email="true">
                         <div class="dragArea row">
                             <div class="col-md-12  form-group" data-for="destinatario">
-                                <label for="name-form1-1n" class="form-control-label mbr-fonts-style display-7">DESTINÁTARIO</label>
-                                <input type="text" name="name" data-form-field="Name" required="required" class="form-control display-7" >
+                                <label class="form-control-label mbr-fonts-style display-7">DESTINÁTARIO</label>
+                                <input type="text" name="destinatario" value="${endereco.getDestinatario()}" data-form-field="Name" required="required" class="form-control display-7" >
                             </div>                            
                         </div>
                         <div class="dragArea row"> 
                             <div class="col-md-4  form-group" data-for="email">
-                                <label for="email-form1-1n" class="form-control-label mbr-fonts-style display-7">CEP</label>
-                                <input type="text" name="cep" data-form-field="cep" required="required" class="form-control display-7" >
+                                <label class="form-control-label mbr-fonts-style display-7">CEP</label>
+                                <input type="text" name="cep" value="${endereco.getCep()}" data-form-field="cep" required="required" class="form-control display-7" >
                             </div> 
                             <div data-for="logradouro" class="col-md-8 form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">LOGRADOURO</label>
-                                <input type="text" name="logradouro" data-form-field="logradouro" required="required" class="form-control display-7">
+                                <label class="form-control-label mbr-fonts-style display-7">LOGRADOURO</label>
+                                <input type="text" name="logradouro" value="${endereco.getLogradouro()}" data-form-field="logradouro" required="required" class="form-control display-7">
                             </div>                            
                         </div>
                         <div class="dragArea row">
                             <div data-for="numero" class="col-md-3  form-group"> 
-                                    <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">NÚMERO</label>
-                                    <input type="text" name="numero" data-form-field="numero" required="required" class="form-control display-7">
+                                    <label class="form-control-label mbr-fonts-style display-7">NÚMERO</label>
+                                    <input type="text" name="numero" value="${endereco.getNumero()}" data-form-field="numero" required="required" class="form-control display-7">
                             </div>
                             <div data-for="complemento" class="col-md-9  form-group"> 
-                                    <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">COMPLEMENTO</label>
-                                    <input type="text" name="complemento" data-form-field="complemento" required="required" class="form-control display-7">
+                                    <label class="form-control-label mbr-fonts-style display-7">COMPLEMENTO</label>
+                                    <input type="text" name="complemento" value="${endereco.getComplemento()}" data-form-field="complemento" required="required" class="form-control display-7">
                             </div>
                             
                         </div>    
                         <div class="dragArea row">                            
                             <div data-for="bairro" class="col-md-12  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">BAIRRO</label>
-                                <input type="text" name="bairro" data-form-field="bairro" required="required" class="form-control display-7">
+                                <label class="form-control-label mbr-fonts-style display-7">BAIRRO</label>
+                                <input type="text" name="bairro" value="${endereco.getBairro()}" data-form-field="bairro" required="required" class="form-control display-7">
                             </div>                            
                         </div>    
                         <div class="dragArea row">
                             <div data-for="cidade" class="col-md-10  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">CIDADE</label>
-                                <input type="text" name="cidade" data-form-field="cidade" required="required" class="form-control display-7">
+                                <label class="form-control-label mbr-fonts-style display-7">CIDADE</label>
+                                <input type="text" name="cidade" value="${endereco.getCidade()}" data-form-field="cidade" required="required" class="form-control display-7">
                             </div>
                             <div data-for="estado" class="col-md-2  form-group"> 
-                                <label for="phone-form1-1n" class="form-control-label mbr-fonts-style display-7">UF</label>
-                                <input type="text" name="estado" data-form-field="estado" required="required" class="form-control display-7">
+                                <label class="form-control-label mbr-fonts-style display-7">UF</label>
+                                <input type="text" name="estado" value="${endereco.getEstado()}" data-form-field="estado" required="required" class="form-control display-7">
                             </div>        
                         </div>
                         <div class="dragArea row container">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <input type="radio">
-                                    <label for="phone-form1-1n" class="display-7" style="margin-left: 5px; margin-top: 7px">ENDEREÇO PRINCIPAL?</label>
+                                    <input type="radio" name="estado" value="${endereco.getEstado()}">
+                                    <label class="display-7" style="margin-left: 5px; margin-top: 7px">ENDEREÇO PRINCIPAL?</label>
                                 </div>
                             </div>
                         </div>
                         <div class="dragArea row">
                             <div class="col-md-12 input-group-btn align-center">
-                                <button type="submit" class="btn btn-primary btn-form display-4">SALVAR ALTERAÇÕES</button>
+                                <button type="submit" name="acao" value="editEnd" class="btn btn-primary btn-form display-4">SALVAR ALTERAÇÕES</button>
                             </div>
                         </div>
-                    </form>
+
                     <!---Formbuilder Form--->
                 </div>
             </div>
         </div>
     </section>
+    </form>
 
     <section once="footers" class="cid-rFWAA2bCdH" id="footer7-1m">
         <div class="container">
