@@ -9,7 +9,7 @@ public class ProdutoDAO {
     public boolean create(Produto produto){
         try(Connection conn = new ConectaDB_Postgres().getConexao()){
 
-            String sql = "INSERT INTO produto (status, nome, valor, descricao, modelo, tipo, conservacao, marca)" + "VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO produto (status, nome, valor, descricao, modelo, tipo, conservacao, marca, imagem)" + "VALUES (?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.setString(1,produto.getStatus());
             pre.setString(2,produto.getNome());
@@ -19,6 +19,7 @@ public class ProdutoDAO {
             pre.setString(6,produto.getTipo());
             pre.setString(7,produto.getConservacao());
             pre.setString(8,produto.getMarca());
+            pre.setString(9,produto.getImagem());
             if(pre.executeUpdate() > 0){
                 return true;
             }
@@ -48,6 +49,7 @@ public class ProdutoDAO {
                 p.setDescricao(rs.getString("descricao"));
                 p.setTipo(rs.getString("tipo"));
                 p.setConservacao(rs.getString("conservacao"));
+                p.setImagem(rs.getString("imagem"));
 
                 return p;
             }
@@ -68,7 +70,7 @@ public class ProdutoDAO {
         //STATEMENT COMO SE FOSSE UMA ABA NO POSTGRE DE CONSULTAS
         Statement stmt = db.getConexao().createStatement();
         db.getConexao();
-        int retorno = stmt.executeUpdate("update produto set nome='" + p.getNome() + "',valor='" + p.getValor() + "',marca='" + p.getMarca() + "',modelo='" + p.getModelo()+"',tipo = '"+p.getTipo() + "',descricao = '"+p.getDescricao()+ "',conservacao = '" +p.getConservacao()+ "',status = '" +p.getStatus()+ "' where codigo = '" + p.getCodigo()+ "'");
+        int retorno = stmt.executeUpdate("update produto set nome='" + p.getNome() + "',valor='" + p.getValor() + "',marca='" + p.getMarca() + "',modelo='" + p.getModelo()+"',tipo = '"+p.getTipo() + "',descricao = '"+p.getDescricao()+ "',conservacao = '" +p.getConservacao()+ "',status = '" +p.getStatus()+ "',imagem = '" +p.getImagem()+ "' where codigo = '" + p.getCodigo()+ "'");
 
 
         if(retorno > 0){
@@ -100,6 +102,35 @@ public class ProdutoDAO {
         try(Connection conn = new ConectaDB_Postgres().getConexao())
         {
             Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM produto WHERE status = 'd'");
+            while(rs.next())
+            {
+                Produto p = new Produto();
+                p.setCodigo (rs.getInt("codigo"));
+                p.setNome(rs.getString("nome"));
+                p.setStatus(rs.getString("status"));
+                p.setValor(rs.getFloat("valor"));
+                p.setMarca(rs.getString("marca"));
+                p.setModelo(rs.getString("modelo"));
+                p.setDescricao(rs.getString("descricao"));
+                p.setTipo(rs.getString("tipo"));
+                p.setConservacao(rs.getString("conservacao"));
+                p.setImagem(rs.getString("imagem"));
+                produtos.add(p);
+            }
+        }catch(SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return produtos;
+    }
+
+    public ArrayList<Produto> getProdutosAdm()
+    {
+        ArrayList<Produto> produtos = new ArrayList<>();
+        try(Connection conn = new ConectaDB_Postgres().getConexao())
+        {
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM produto");
             while(rs.next())
             {
@@ -113,6 +144,7 @@ public class ProdutoDAO {
                 p.setDescricao(rs.getString("descricao"));
                 p.setTipo(rs.getString("tipo"));
                 p.setConservacao(rs.getString("conservacao"));
+                p.setImagem(rs.getString("imagem"));
                 produtos.add(p);
             }
         }catch(SQLException ex)
@@ -139,6 +171,7 @@ public class ProdutoDAO {
                 p.setDescricao(res.getString("descricao"));
                 p.setTipo(res.getString("tipo"));
                 p.setConservacao(res.getString("conservacao"));
+                p.setImagem(res.getString("imagem"));
 
             }
         } catch (Exception e) {
@@ -163,6 +196,7 @@ public class ProdutoDAO {
                 p.setDescricao(res.getString("descricao"));
                 p.setTipo(res.getString("tipo"));
                 p.setConservacao(res.getString("conservacao"));
+                p.setImagem(res.getString("imagem"));
 
             }
         } catch (Exception e) {
@@ -187,6 +221,7 @@ public class ProdutoDAO {
                 p.setDescricao(res.getString("descricao"));
                 p.setTipo(res.getString("tipo"));
                 p.setConservacao(res.getString("conservacao"));
+                p.setImagem(res.getString("imagem"));
 
             }
         } catch (Exception ex) {
@@ -201,7 +236,7 @@ public class ProdutoDAO {
         try(Connection conn = new ConectaDB_Postgres().getConexao())
         {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM produto where modelo = '" + modelo + "'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM produto where status = 'd' and modelo = '" + modelo + "'");
             while(rs.next())
             {
                 Produto p = new Produto();
@@ -214,6 +249,7 @@ public class ProdutoDAO {
                 p.setDescricao(rs.getString("descricao"));
                 p.setTipo(rs.getString("tipo"));
                 p.setConservacao(rs.getString("conservacao"));
+                p.setImagem(rs.getString("imagem"));
                 produtos.add(p);
             }
         }catch(SQLException ex)

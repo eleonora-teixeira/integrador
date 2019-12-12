@@ -196,26 +196,6 @@
             </div>
         </div>
     </section>
-    <!--CALCULO FRETE-->
-    <%--<section class="mbr-section form3 cid-rFXlj2socH" id="form3-2f">
-        <div class="container">
-            <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
-                        <div class="dragArea row">
-                            <div class="form-group col" data-for="email">
-                                <input type="email" name="CEP" placeholder="CEP" data-form-field="CEP"
-                                    class="form-control display-7" id="email-form3-2f">
-                            </div>
-                            <div class="col-auto input-group-btn">
-                                <button type="submit" class="btn btn-primary display-4">CALCULAR</button>
-                            </div>
-                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>--%>
 
     <!--TABELA CALCULO-->
     <div class="row section-table cid-rFXkuCJSLp  container-table">

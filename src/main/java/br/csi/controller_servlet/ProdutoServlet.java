@@ -33,6 +33,7 @@ public class ProdutoServlet extends HttpServlet {
             String tipo = req.getParameter("tipo");
             String conservacao = req.getParameter("conservacao");
             String marca = req.getParameter("marca");
+            String imagem = req.getParameter("imagem");
 
             Produto produto = new Produto();
 
@@ -44,6 +45,7 @@ public class ProdutoServlet extends HttpServlet {
             produto.setTipo(tipo);
             produto.setConservacao(conservacao);
             produto.setMarca(marca);
+            produto.setImagem(imagem);
 
             System.out.println("Antes do boolean retorno");
             System.out.println("Nome produto que quer cadastrar: "+produto.getNome());
@@ -96,6 +98,7 @@ public class ProdutoServlet extends HttpServlet {
                 String conservacao = req.getParameter("conservacao");
                 String marca = req.getParameter("marca");
                 Integer codigo = Integer.valueOf(req.getParameter("codigo"));
+                String imagem = req.getParameter("imagem");
 
                 Produto produto = new Produto();
 
@@ -108,6 +111,7 @@ public class ProdutoServlet extends HttpServlet {
                 produto.setConservacao(conservacao);
                 produto.setMarca(marca);
                 produto.setCodigo(codigo);
+                produto.setImagem(imagem);
 
                 try {
                     ProdutoDAO pd = new ProdutoDAO();
@@ -200,6 +204,7 @@ public class ProdutoServlet extends HttpServlet {
             String tipo = req.getParameter("tipo");
             String conservacao = req.getParameter("conservacao");
             String marca = req.getParameter("marca");
+            String imagem = req.getParameter("imagem");
 
             Produto produto = new Produto();
 
@@ -212,6 +217,7 @@ public class ProdutoServlet extends HttpServlet {
             produto.setTipo(tipo);
             produto.setConservacao(conservacao);
             produto.setMarca(marca);
+            produto.setImagem(imagem);
 
             req.setAttribute("produto", produto);
             RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/views/editar-produto.jsp");

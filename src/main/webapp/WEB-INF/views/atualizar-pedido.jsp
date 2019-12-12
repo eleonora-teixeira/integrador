@@ -1,5 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@page import="br.csi.model.Usuario" %>
 <!DOCTYPE html>
 <html>
 
@@ -29,6 +31,12 @@
 </head>
 
 <body>
+
+<c:out value="${requestScope.usuario}" />
+
+<jsp:useBean id="pedidos" class="br.csi.dao.Compra_DAO" />
+<c:set var="pedidos" value="${pedidos.getPedidos()}" />
+
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
         <nav
@@ -111,85 +119,60 @@
                 </div>
             </div>
         </div>
-        <div class="container" style="margin-top: 144px">
-            <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
-                        <div class="dragArea row">
-                            <div class="form-group col" data-for="email">
-                                <input type="email" name="email" data-form-field="Email" class="form-control display-7"
-                                       placeholder="Digite o número do pedido">
-                            </div>
-                            <div class="col-auto input-group-btn">
-                                <button type="submit"
-                                        class="btn  btn-primary display-4">
-                                    BUSCAR PEDIDO
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <!---Formbuilder Form--->
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="mbr-section form1 cid-rFWrAdFbye" id="form1-14">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="title col-12 col-lg-8">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="media-container-column col-lg-8" data-form-type="formoid">
-                    <!---Formbuilder Form--->
-                    <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
-                        <input type="hidden" name="email" data-form-email="true">
-                        <div class="dragArea row">
-                            <div class="col-md-8  form-group" data-for="email">
-                                <label
-                                       class="form-control-label mbr-fonts-style display-7">PEDIDO</label>
-                                <input type="text" name="cep" data-form-field="cep" required="required"
-                                       class="form-control display-7">
-                            </div>
-                            <div data-for="logradouro" class="col-md-4 form-group" style="margin-top:14px">
-                                <div class="btn-group btn-sm mbr-fonts-style display-7" style="height: 88px;">
-                                    <button  type="button" class="btn btn-sm btn-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATUS
-                                        <span class="mbrib-arrow-down" style="margin-left: 10px"></span>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Em Transporte</a>
-                                        <a class="dropdown-item" href="#">Entrege</a>
-                                        <a class="dropdown-item" href="#">Aberto</a>
-                                    </div>
-                                    </button>
 
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Em Transporte</a>
-                                        <a class="dropdown-item" href="#">Entrege</a>
-                                        <a class="dropdown-item active" href="#">Aberto</a>
+    </section>
+    <form action="compras" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
+        <section class="mbr-section form1 cid-rFWrAdFbye" id="form1-14">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="title col-12 col-lg-8">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="media-container-column col-lg-8" data-form-type="formoid">
+                        <!---Formbuilder Form--->
+
+                            <input type="hidden" name="email" data-form-email="true">
+                            <div class="dragArea row">
+                                <div class="col-md-8  form-group" data-for="email">
+                                    <label class="form-control-label mbr-fonts-style display-7">PEDIDO</label>
+                                    <select type="text" name="id_compra" data-form-field="cep" required="required" class="form-control display-7">
+                                        <c:forEach var="pedidos" items="${pedidos}">
+                                            <option value="${pedidos.id_compra}">${pedidos.id_compra}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <div data-for="logradouro" class="col-md-4 form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7">STATUS</label>
+                                        <select name="status" class="form-control" >
+                                            <option value="Em aberto"> Em Aberto</option>
+                                            <option value="Em transporte"> Em Transporte</option>
+                                            <option value="Entregue"> Entregue</option>
+                                        </select>
+                                </div>
+
+
+                                <div class="dragArea row" style="margin-top: 40px; margin-left: 210px;">
+                                    <div class="col-md-12 input-group-btn">
+                                        <button type="submit" name="acao" value="alteraStatus" class="btn btn-form btn-danger display-4">
+                                            SALVAR
+                                            ALTERAÇÕES
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
-                            
-                            <div class="dragArea row" style="margin-top: 40px">
-                                <div class="col-md-12 input-group-btn">
-                                    <button type="submit" class="btn btn-form btn-danger display-4">
-                                        SALVAR
-                                        ALTERAÇÕES
-                                    </button>
-                                </div>
-                            </div>
-</form>
-                    <!---Formbuilder Form--->
+                    </div>
                 </div>
             </div>
-        </div>
-        <br /><br />
-    </section>
-    <section once="footers" class="cid-rFWAA2bCdH" id="footer7-1m">
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </section>
+    </form>
+        <!---Formbuilder Form--->
+
+
+        <section once="footers" class="cid-rFWAA2bCdH" id="footer7-1m">
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row social-row">

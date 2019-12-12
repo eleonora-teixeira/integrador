@@ -158,25 +158,17 @@
                                 <div class="card col-12 col-md-6 p-3 col-lg-4">
                                     <div class="card-wrapper">
                                         <div class="card-img">
-                                            <a href="#"><img src="assets/images/NO_IMG.png" alt="Mobirise"
-                                                             title=""></a>
+                                            <a href="#"><img alt="imagem" title="" src="${produtos.imagem}" style="height:535px; lenght:700px"></a>
                                         </div>
                                         <div class="card-box">
                                             <h4 class="card-title mbr-fonts-style display-5 text-center">${produtos.nome} </h4>
                                             <!--Btn-->
-                                            <div class="row text-center" style="margin-left: 25px">
-                                                <form action="cart" method="post">
-                                                    <div class="mbr-section-btn align-center">
-                                                        <input type="hidden" name="codigo" value="${produtos.codigo}">
-                                                        <input type="hidden" name="id_usu" value="${usuario.getId()}">
-                                                        <button name="acao" value="carrinho" class="btn btn-danger btn-sm display-4" style="margin-right: 10px">R$ ${produtos.valor}</button>
-                                                    </div>
-                                                </form>
+                                            <div class="text-center" style="margin-left: 25px">
                                                 <form action="cadastroProduto" method="post">
                                                     <div class="mbr-section-btn align-center">
                                                         <%--<button name="acao" value="detalhesAdm?id=${produtos.codigo}" class="btn btn-primary btn-sm display-4">DETALHES</button>--%>
                                                         <input type="hidden" name="codigo" value="${produtos.codigo}">
-                                                        <button name="acao" value="detalhesProd" class="btn btn-primary btn-sm display-4">DETALHES</button>
+                                                        <button name="acao" value="detalhesProdOut" class="btn btn-primary btn-sm display-4">DETALHES</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -184,6 +176,7 @@
                                     </div>
             </div>
          </c:forEach>
+         </br></br></br></br></br></br></br></br></br></br></br>
 </section>
 
 

@@ -1,6 +1,6 @@
-<%@ page import="br.csi.model.Produto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="br.csi.model.Produto" %>
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +30,7 @@
 <c:out value="${requestScope.usuario}" />
 
 <jsp:useBean id="produtos" class="br.csi.dao.ProdutoDAO" />
-<c:set var="produtos" value="${produtos.getProdutos()}" />
+<c:set var="produtos" value="${produtos.getProdutosAdm()}" />
 
     <!--NAVBAR-->
     <section class="menu cid-rFWnhSolwH" once="menu" id="menu1-m">
@@ -121,8 +121,7 @@
                 <div class="card col-12 col-md-6 p-3 col-lg-4">
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <a href="#"><img src="assets/images/NO_IMG.png" alt="Mobirise"
-                                    title=""></a>
+                            <a href="#"><img alt="imagem" title="" src="${produtos.imagem}" style="height:535px; lenght:700px"></a>
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-5 text-center">${produtos.nome} </h4>

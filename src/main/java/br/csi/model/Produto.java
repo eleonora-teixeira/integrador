@@ -11,7 +11,15 @@ public class Produto {
     private String conservacao;
     private String marca;
     private float total;
+    private String imagem;
 
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 
     public float getTotal() {
         return total;

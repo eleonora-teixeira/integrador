@@ -118,7 +118,7 @@
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure" style="width: 50%;">
-                        <img src="assets/images/NO_IMG.png" alt="Mobirise" title="">
+                        <img alt="imagem" title="" src="${produto.imagem}">
                     </div>
                     <div class="align-left aside-content">
                         <h4 class="mbr-title pt-2 mbr-fonts-style display-2">${produto.nome}</h4>
@@ -155,6 +155,7 @@
                                             <input type="hidden" name="tipo" value="${produto.tipo}">
                                             <input type="hidden" name="conservacao" value="${produto.conservacao}">
                                             <input type="hidden" name="marca" value="${produto.marca}">
+                                            <input type="hidden" name="imagem" value="${produto.imagem}">
                                             <span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>EDITAR
                                         </button>
                                 </form>

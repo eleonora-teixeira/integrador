@@ -178,6 +178,7 @@
                             </div>
                         </div>
                         <p class="mbr-timeline-text mbr-fonts-style display-7">Pedido N: ${compras.getId_compra()}</p>
+                        <p class="mbr-timeline-text mbr-fonts-style display-7">Produto: ${compras.getId_prod()}</p>
                         <p class="mbr-timeline-text mbr-fonts-style display-7">Total compra: ${compras.getTotal()}</p>
                      </div>
                 </div>

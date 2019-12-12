@@ -2,6 +2,7 @@ package br.csi.controller_servlet;
 
 import br.csi.dao.Compra_DAO;
 import br.csi.model.Compra;
+import br.csi.model.Produto;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,6 +32,7 @@ public class CompraServlet extends HttpServlet {
             Integer id_usu = Integer.valueOf(req.getParameter("id_usu"));
             Integer id_end = Integer.valueOf(req.getParameter("id_end"));
             String status = req.getParameter("status");
+            int codigo = Integer.parseInt(req.getParameter("codigo"));
 
             Compra c = new Compra();
 
@@ -38,6 +40,8 @@ public class CompraServlet extends HttpServlet {
             c.setId_usu(id_usu);
             c.setId_end(id_end);
             c.setStatus(status);
+            c.setId_prod(codigo);
+
 
             System.out.println("Status: "+c.getStatus());
             System.out.println("Id Usuario: "+c.getId_usu());
@@ -47,12 +51,19 @@ public class CompraServlet extends HttpServlet {
             boolean retorno = new Compra_DAO().create(c);
             boolean retorno2 = false;
             try {
-                retorno2 = new Compra_DAO().deletar(c);
+                retorno2 = new Compra_DAO().alteraStatus(c);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            boolean retorno3 = false;
+            try {
+                retorno3 = new Compra_DAO().deletar(c);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            if(retorno && retorno2)
+
+            if(retorno && retorno2 && retorno3)
             {
                 req.setAttribute("compra", c);
                 RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/pedidos.jsp");
@@ -75,7 +86,7 @@ public class CompraServlet extends HttpServlet {
 
             try {
                 boolean retorno = new Compra_DAO().deletar(c);
-            } catch (Exception e) {
+                            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -111,6 +122,9 @@ public class CompraServlet extends HttpServlet {
             c.setId_compra(id_compra);
             c.setStatus(status);
 
+            System.out.println("status: "+status);
+
+            if(c.getStatus().equals("Em aberto")){
                 try {
                     boolean retorno = new Compra_DAO().deletarCompra(c);
                 } catch (Exception e) {
@@ -119,7 +133,41 @@ public class CompraServlet extends HttpServlet {
 
                 RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/pedidos.jsp");
                 dis.forward(req, res);
+            }else{
+                RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/pedidos.jsp");
+                dis.forward(req, res);
+            }
 
+            try {
+                boolean retorno = new Compra_DAO().deletarCompra(c);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/pedidos.jsp");
+            dis.forward(req, res);
+        }else if (acao.equals("alteraStatus")) {
+
+            Integer id_compra = Integer.valueOf(req.getParameter("id_compra"));
+            String status = req.getParameter("status");
+
+            System.out.println("ID_Compra: "+id_compra);
+            System.out.println("Status: "+status);
+
+            Compra c = new Compra();
+
+            c.setId_compra(id_compra);
+            c.setStatus(status);
+
+            try {
+                boolean retorno = new Compra_DAO().updateStatusCompra(c);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+            RequestDispatcher dis = req.getRequestDispatcher("WEB-INF/views/index-adm.jsp");
+            dis.forward(req, res);
         }
 
     }

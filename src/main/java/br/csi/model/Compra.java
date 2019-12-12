@@ -6,6 +6,16 @@ public class Compra {
     private int id_usu;
     private int id_end;
     private int id_compra;
+    private int id_prod;
+
+
+    public int getId_prod() {
+        return id_prod;
+    }
+
+    public void setId_prod(int id_prod) {
+        this.id_prod = id_prod;
+    }
 
 
     public int getId_compra() {

@@ -123,17 +123,36 @@
                     </div>
                     <div data-for="logradouro" class="col-md-8 form-group">
                         <label  class="form-control-label mbr-fonts-style display-7">MARCA</label>
-                        <input type="text" name="marca" data-form-field="marca" value="${produto.marca}" required="required" class="form-control display-7">
+                        <select type="text" name="marca"  data-form-field="marca" required="required" class="form-control display-7">
+                            <option value="${produto.marca}" readonly="readonly" selected>${produto.marca}</option>
+                            <option value="SONY">SONY</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="Nintendo">Nintendo</option>
+                        </select>
                     </div>
                 </div>
                 <div class="dragArea row">
                     <div data-for="numero" class="col-md-6  form-group">
                         <label  class="form-control-label mbr-fonts-style display-7">MODELO</label>
-                        <input type="text" name="modelo" data-form-field="numero"  value="${produto.modelo}" required="required" class="form-control display-7">
+                        <select type="text" name="modelo" data-form-field="modelo" required="required" class="form-control display-7">
+                            <option value="${produto.modelo}" readonly="readonly" selected>${produto.modelo}</option>
+                            <option value="Playstation 3">Playstation 3</option>
+                            <option value="Playstation 4">Playstation 4</option>
+                            <option value="Xbox 360">Xbox 360</option>
+                            <option value="Xbox One">Xbox One</option>
+                            <option value="Wii">Wii</option>
+                            <option value="Wii U">Wii U</option>
+                            <option value="Switch">Switch</option>
+                        </select>
                     </div>
                     <div data-for="complemento" class="col-md-6  form-group">
                         <label  class="form-control-label mbr-fonts-style display-7">TIPO</label>
-                        <input type="text" name="tipo" data-form-field="tipo" value="${produto.tipo}" required="required" class="form-control display-7">
+                        <select type="text" name="tipo" data-form-field="tipo" required="required" class="form-control display-7">
+                            <option value="${produto.tipo}" readonly="readonly" selected>${produto.tipo}</option>
+                            <option value="Jogo">Jogo</option>
+                            <option value="Periferico">Periférico</option>
+                            <option value="Acessorio">Acessório</option>
+                        </select>
                     </div>
 
                 </div>
@@ -150,7 +169,17 @@
                     </div>
                     <div data-for="estado" class="col-md-4  form-group">
                         <label  class="form-control-label mbr-fonts-style display-7">STATUS</label>
-                        <input type="text" name="status" data-form-field="status" value="${produto.status}" required="required" class="form-control display-7">
+                        <select type="text" name="status" data-form-field="status" required="required" class="form-control display-7">
+                            <option value="${produto.status}" readonly="readonly" selected>${produto.status}</option>
+                            <option value="d">Disponivel</option>
+                            <option value="i">Indisponivel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div data-for="imagem" class="col-md-12  form-group">
+                         <label class="form-control-label mbr-fonts-style display-7">IMAGEM</label>
+                         <input type="text" name="imagem" data-form-field="imagem" required="required" class="form-control display-7" value="${produto.imagem}">
                     </div>
                 </div>
                 <div class="dragArea row">

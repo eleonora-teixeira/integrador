@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <!-- Site made with Mobirise Website Builder v4.11.2, https://mobirise.com -->
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.11.2, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -13,6 +12,7 @@
     <meta name="description" content="">
 
     <title>Logado</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -128,17 +128,33 @@
                             </div> 
                             <div data-for="marca" class="col-md-8 form-group">
                                 <label  class="form-control-label mbr-fonts-style display-7">MARCA</label>
-                                <input type="text" name="marca" data-form-field="marca" required="required" class="form-control display-7">
+                                <select type="text" name="marca"  data-form-field="marca" required="required" class="form-control display-7">
+                                    <option value="SONY">SONY</option>
+                                    <option value="Microsoft">Microsoft</option>
+                                    <option value="Nintendo">Nintendo</option>
+                                </select>
                             </div>                            
                         </div>
                         <div class="dragArea row">
                             <div data-for="modelo" class="col-md-6  form-group">
                                     <label  class="form-control-label mbr-fonts-style display-7">MODELO</label>
-                                    <input type="text" name="modelo" data-form-field="modelo" required="required" class="form-control display-7">
+                                    <select type="text" name="modelo" data-form-field="modelo" required="required" class="form-control display-7">
+                                        <option value="Playstation 3">Playstation 3</option>
+                                        <option value="Playstation 4">Playstation 4</option>
+                                        <option value="Xbox 360">Xbox 360</option>
+                                        <option value="Xbox One">Xbox One</option>
+                                        <option value="Wii">Wii</option>
+                                        <option value="Wii U">Wii U</option>
+                                        <option value="Switch">Switch</option>
+                                    </select>
                             </div>
                             <div data-for="tipo" class="col-md-6  form-group">
                                     <label  class="form-control-label mbr-fonts-style display-7">TIPO</label>
-                                    <input type="text" name="tipo" data-form-field="tipo" required="required" class="form-control display-7">
+                                    <select type="text" name="tipo" data-form-field="tipo" required="required" class="form-control display-7">
+                                        <option value="Jogo">Jogo</option>
+                                        <option value="Periferico">Periférico</option>
+                                        <option value="Acessorio">Acessório</option>
+                                    </select>
                             </div>
                             
                         </div>    
@@ -154,11 +170,21 @@
                                 <input type="text" name="conservacao" data-form-field="conservacao" class="form-control display-7">
                             </div>
 
-                            <div data-for="status" class="col-md-4  form-group">
+                            <div class="col-md-4 form-group">
                                 <label  class="form-control-label mbr-fonts-style display-7">STATUS</label>
-                                <input type="text" name="status" data-form-field="status" required="required" class="form-control display-7">
+                                <select class="form-control" name="status"  required="required">
+                                    <option value="d">DISPONIVEL</option>
+                                    <option value="i">INDISPONIVEL</option>
+                                </select>
                             </div>
                         </div>
+                        <div class="dragArea row">
+                            <div data-for="imagem" class="col-md-12  form-group">
+                                <label class="form-control-label mbr-fonts-style display-7">IMAGEM</label>
+                                <input type="text" name="imagem" data-form-field="imagem" class="form-control display-7">
+                            </div>
+                        </div>
+
                         <div class="dragArea row">
                             <div class="col-md-12 input-group-btn align-center">
                                 <button type="submit" name="acao" value="cadastrarProd" class="btn btn-form btn-danger display-4">SALVAR</button>

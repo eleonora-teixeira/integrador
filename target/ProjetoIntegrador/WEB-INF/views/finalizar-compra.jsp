@@ -259,19 +259,22 @@
 
                                     <input type="hidden" name="status" value="Em aberto">
 
+                                    <c:forEach var="total3" items="${total3}">
+                                        <input type="hidden" name="total" value="${total3.getTotal()}">
+                                    </c:forEach>
+
+                                    <input type="hidden" name="id_usu" value="${usuario.getId()}">
+
+                                    <c:forEach var="enderecos2" items="${enderecos2}">
+                                        <input type="hidden" name="id_end" value="${enderecos2.getId_end()}">
+                                    </c:forEach>
+
+                                    <c:forEach var="produtos" items="${produtos}">
+                                        <input type="hidden" name="codigo" value="${produtos.getCodigo()}">
+                                    </c:forEach>
+
                                     <button type="submit" name="acao" value="encerraPedido" class="btn btn-danger display-4" >
                                         FINALIZAR COMPRA
-
-                                        <c:forEach var="total3" items="${total3}">
-                                            <input type="hidden" name="total" value="${total3.getTotal()}">
-                                        </c:forEach>
-
-                                        <input type="hidden" name="id_usu" value="${usuario.getId()}">
-
-                                        <c:forEach var="enderecos2" items="${enderecos2}">
-                                            <input type="hidden" name="id_end" value="${enderecos2.getId_end()}">
-                                        </c:forEach>
-
                                     </button>
 
                                 </form>

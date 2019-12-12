@@ -179,8 +179,7 @@
                     <div class="card col-12 col-md-6 p-3 col-lg-4">
                         <div class="card-wrapper">
                             <div class="card-img">
-                                <a href="#"><img src="assets/images/NO_IMG.png" alt="Mobirise"
-                                                 title=""></a>
+                                <a href="#"><img alt="imagem" title="" src="${produtos.imagem}" style="height:535px; lenght:700px"></a>
                             </div>
                             <div class="card-box">
                                 <h4 class="card-title mbr-fonts-style display-5 text-center">${produtos.nome} </h4>
@@ -208,6 +207,7 @@
 
             </div>
         </div>
+        </br></br></br></br></br></br></br></br></br></br></br>
     </section>
 
 

@@ -42,7 +42,7 @@
             <div class="menu-logo">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
-                        <a href="index.html">
+                        <a href="index.jsp">
                             <img src="assets/images/gamepad-1.svg" alt="Mobirise" title="" style="height: 3.8rem;">
                         </a>
                     </span>
@@ -120,7 +120,7 @@
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure" style="width: 50%;">
-                        <img src="assets/images/NO_IMG.png" alt="Mobirise" title="">
+                        <img alt="imagem" title="" src="${produto.imagem}">
                     </div>
                     <div class="align-left aside-content">
                         <h4 class="mbr-title pt-2 mbr-fonts-style display-2">${produto.nome}</h4>
